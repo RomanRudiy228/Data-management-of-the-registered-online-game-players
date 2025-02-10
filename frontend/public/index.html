@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration of online game players</title>
+    <link rel="stylesheet" href="/src/styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <link rel="stylesheet" href="/src/styles/popUpWindow.css">
+    <link rel="stylesheet" href="/src/styles/onlineUpdate.css">
+</head>
+<body>
+    <header id="scrollToTop">
+            <h1 class="main-title">Register of Online Game Players</h1>
+            <script src="/src/utils/scrollToTop.js"></script>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button id="showAll">
+                <span class="button-text">Show all players</span>
+                <i class="bx bx-group" type="solid"></i>
+            </button>
+            <button id="showBlocked">
+                <span class="button-text">Banned players</span>
+                <i class='bx bx-block'></i>
+            </button>
+            <script src="/src/utils/showAllPlayersAndBlocked.js"></script>
+        </div>
+
+        <div id="notification" class="hidden"></div>
+
+        <form id="playerForm">
+
+            <div class="form-header">
+                <h2>Add new player</h2>
+                <div class="online-status">
+                    <span class="pulse"></span>
+                    <p id="online">0 Online</p>
+                </div>
+            </div>
+
+            <input type="text" id="name" placeholder="Nickname">
+            <input type="number" id="level" placeholder="Level">
+            <select id="country">
+                <option value="">Choose your country</option>
+                <option value="Denmark">Denmark</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">Great Britain</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Italy">Italy</option>
+                <option value="Spain">Spain</option>
+                <option value="Australia">Australia</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="Poland">Poland</option>
+                <option value="Scotland">Scotland</option>
+                <option value="Finland">Finland</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="China">China</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Argentina">Argentina</option>
+            </select>
+            <select id="status">
+                <option value="active">Active</option>
+                <option value="blocked">Banned</option>
+            </select>
+            <button type="submit" id="addPlayer">Add player</button>
+
+            <script src="/src/utils/popUpWindow.js"></script>
+        </form>
+        <div class="search-container">
+            <i class="bx bx-search"></i>
+            <input type="text" id="searchInput" placeholder="Search players...">
+        </div>
+        
+        <script src="/src/utils/searchInput.js"></script>
+        <table id="playersTable">
+            <thead>
+                <tr>
+                    <th id="nicknameHeader">Nickname</th>
+                    <th id="levelHeader">Level</th>
+                    <th id="countryHeader">Country</th>
+                    <th id="statusHeader">Status</th>
+                    <th id="registrationDateHeader">Registration Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+
+    <script type="module" src="/src/script.js"></script>
+</body>
+</html>

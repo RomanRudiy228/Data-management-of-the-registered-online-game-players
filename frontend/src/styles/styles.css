@@ -1,0 +1,231 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f8f9fa, #6d9dc9);;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white; 
+    text-shadow: 
+    -1.5px -1.5px 0px rgb(54, 51, 51),
+    1.5px -1.5px 0px rgb(73, 69, 69),
+    -1.5px 1.5px 0px rgb(60, 58, 58),
+    1.5px 1.5px 0px rgb(41, 40, 40);
+    text-align: center;
+    padding: 0px;
+    height: 100px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: 1000;
+    cursor: pointer; 
+    background: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(10px);
+    box-shadow: #007acc;
+}
+
+main {
+    margin: 100px auto;
+    max-width: 55%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: max-width 0.3s ease;
+}
+
+.main-title {
+    font-family: 'Poppins' Sans-serif; 
+    font-size: clamp(24px, 5vw, 48px); 
+    font-weight: 700; 
+    color: #007acc; 
+    text-align: center; 
+    margin-top: 20px;
+    text-transform: uppercase; 
+    letter-spacing: -0.5px;
+    word-spacing: 5px; 
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s ease-in-out; 
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: 2px solid transparent;
+    background-color: #007acc;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    transition: transform 0.3s ease;
+}
+
+#showBlocked {
+    position: relative;
+    border: 2px solid transparent; 
+    background-color: #f44336;
+    color: white; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s; 
+}
+
+#showBlocked:hover {
+    background-color: white; 
+    color: #f44336; 
+    border-color: #f44336; 
+    border-style: solid;
+    transform: scale(1.05); 
+}
+
+button:hover {
+    background-color: white;
+    color: #007acc;
+    border-color: #007acc ;
+    border-style: solid;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.965);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:hover, select:hover {
+    border-color: #007acc;
+}
+
+input:focus, select:focus {
+    border: 2px solid #007acc;
+    outline: none;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #cecece;
+}
+
+th {
+    background-color: #f0f4f8;
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #888;
+}
+
+.search-container input {
+    padding-left: 35px; 
+    font-size: 14px;
+    height: 20px;
+    width: 627.5px;
+} 
+
+#playersTable th {
+    cursor: pointer;
+}
+
+#playersTable th.sort-asc::after {
+    content: ' ↑';
+}
+
+#playersTable th.sort-desc::after {
+    content: ' ↓';
+}
+
+.delete-btn {
+    padding: 10px;
+    margin: 5px;
+    display: inline-block;
+}
+
+/* Для ширини екрану більше 768px (десктопи) */
+@media (min-width: 768px) {
+    .delete-btn, .search-container {
+        font-size: 14px; /* Збільшення шрифтів на великих екранах */
+    }
+
+    .search-container input {
+        width: 627.5px; /* Ширина поля пошуку на великих екранах */
+    }
+}
+
+/* Для маленьких екранів (мобільні пристрої) */
+@media (max-width: 768px) {
+    .delete-btn, .search-container {
+        font-size: 14px;
+        padding: 8px 15px;
+        width: 100%; /* 100% ширина на мобільних пристроях */
+        margin-bottom: 10px;
+    }
+
+    .search-container input {
+        width: 100%; /* Пошукове поле займає всю ширину */
+    }
+}
+
+/* Для дуже маленьких екранів */
+@media (max-width: 480px) {
+    .delete-btn, .search-container {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .search-container input {
+        width: 100%; /* Пошукове поле займає всю ширину */
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        max-width: 95%; 
+        padding: 20px;
+    }
+
+    .main-title {
+        font-size: 32px;
+    }
+}
